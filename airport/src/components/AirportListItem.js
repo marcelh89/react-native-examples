@@ -1,0 +1,45 @@
+import React, { Component } from 'react';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
+import { CardSection } from './common'
+
+
+class AirportListItem extends Component {
+
+  selectAirport(id) {
+    console.log(`selected airport with id ${id}`);
+    Actions.airportDetail({ airport: this.props.airport });
+  }
+
+  render() {
+    const { airport } = this.props;
+    const { textStyle } = styles;
+
+    return (
+      <CardSection>
+        <TouchableWithoutFeedback onPress={() => this.selectAirport(airport.id)}>
+          <View>
+              <Text style={textStyle}>{airport.name}</Text>
+              <Text>IATA: {airport.iata}</Text>
+              <Text>Country: {airport.country}</Text>
+          </View>
+          </TouchableWithoutFeedback>
+      </CardSection>
+    );
+  }
+}
+
+
+const styles = {
+  textStyle: {
+    textAlign: 'center',
+  }
+};
+
+const mapStateToProps = state => {
+  //object {airports: [] } -> Array[]
+  return state.airports;
+};
+
+export default connect(mapStateToProps)(AirportListItem);

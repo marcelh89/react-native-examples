@@ -1,0 +1,132 @@
+[
+    {
+        "city": "Husavik",
+        "country": "Iceland",
+        "iata": "HZK",
+        "icao": "BIHU",
+        "id": 14,
+        "latitude": 65.952301,
+        "longitude": -17.426001,
+        "name": "Húsavík Airport"
+    },
+    {
+        "city": "Gusau",
+        "country": "Nigeria",
+        "iata": "QUS",
+        "icao": "DNGU",
+        "id": 265,
+        "latitude": 12.1716995239258,
+        "longitude": 6.69610977172852,
+        "name": "Gusau Airport"
+    },
+    {
+        "city": "Kuusamo",
+        "country": "Finland",
+        "iata": "KAO",
+        "icao": "EFKS",
+        "id": 437,
+        "latitude": 65.987602233887,
+        "longitude": 29.239400863647,
+        "name": "Kuusamo Airport"
+    },
+    {
+        "city": "Lusaka",
+        "country": "Zambia",
+        "iata": "LUN",
+        "icao": "FLLS",
+        "id": 907,
+        "latitude": -15.3308000565,
+        "longitude": 28.4526004791,
+        "name": "Kenneth Kaunda International Airport Lusaka"
+    },
+    {
+        "city": "Lampedusa",
+        "country": "Italy",
+        "iata": "LMP",
+        "icao": "LICD",
+        "id": 1510,
+        "latitude": 35.497898,
+        "longitude": 12.6181,
+        "name": "Lampedusa Airport"
+    },
+    {
+        "city": "Busan",
+        "country": "South Korea",
+        "iata": "PUS",
+        "icao": "RKPK",
+        "id": 2372,
+        "latitude": 35.1795005798,
+        "longitude": 128.93800354,
+        "name": "Gimhae International Airport"
+    },
+    {
+        "city": "Palmdale",
+        "country": "United States",
+        "iata": "PMD",
+        "icao": "KPMD",
+        "id": 3756,
+        "latitude": 34.62939835,
+        "longitude": -118.0849991,
+        "name": "Palmdale Regional/USAF Plant 42 Airport"
+    },
+    {
+        "city": "Gizo",
+        "country": "Solomon Islands",
+        "iata": "GZO",
+        "icao": "AGGN",
+        "id": 5412,
+        "latitude": -8.09778022766,
+        "longitude": 156.863998413,
+        "name": "Nusatupe Airport"
+    },
+    {
+        "city": "Usak",
+        "country": "Turkey",
+        "iata": "USQ",
+        "icao": "LTBO",
+        "id": 5795,
+        "latitude": 38.6814994812012,
+        "longitude": 29.471700668335,
+        "name": "Uşak Airport"
+    },
+    {
+        "city": "Savusavu",
+        "country": "Fiji",
+        "iata": "SVU",
+        "icao": "NFNS",
+        "id": 5878,
+        "latitude": -16.8027992249,
+        "longitude": 179.341003418,
+        "name": "Savusavu Airport"
+    },
+    {
+        "city": "Wausau",
+        "country": "United States",
+        "iata": "AUW",
+        "icao": "KAUW",
+        "id": 6853,
+        "latitude": 44.9262008667,
+        "longitude": -89.6266021729,
+        "name": "Wausau Downtown Airport"
+    },
+    {
+        "city": "Lausanne",
+        "country": "Switzerland",
+        "iata": "QLS",
+        "icao": "LSGL",
+        "id": 6928,
+        "latitude": 46.54529953,
+        "longitude": 6.61667013168,
+        "name": "Lausanne-Blécherette Airport"
+    },
+    {
+        "city": "Amakusa",
+        "country": "Japan",
+        "iata": "AXJ",
+        "icao": "RJDA",
+        "id": 7550,
+        "latitude": 32.482498,
+        "longitude": 130.158997,
+        "name": "Amakusa Airport"
+    }
+]
