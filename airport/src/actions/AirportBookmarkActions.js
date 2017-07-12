@@ -1,6 +1,7 @@
 import store from 'react-native-simple-store';
 import {
-  BOOKMARK_CREATE,
+  BOOKMARK_CREATE_SUCCESS,
+  BOOKMARK_CREATE_FAILED,
   BOOKMARK_DELETE,
   BOOKMARKS_FETCH_SUCCESS,
   BOOKMARKS_FETCH_FAILED
@@ -22,20 +23,20 @@ export const fetchBookmarks = () => {
   };
 };
 
-export const createBookmark = () => {
-  const bookmark = {
-      city: 'Husavik',
-      country: 'Iceland',
-      iata: 'HZK',
-      icao: 'BIHU',
-      id: 14,
-      latitude: 65.952301,
-      longitude: -17.426001,
-      name: 'Húsavík Airport'
-  };
+export const addBookmark = (bookmark) => {
 
-  store.push('bookmarks', bookmark)
-  .then(() => store.get('bookmarks'))
-  .then((res) => console.log(res))
-  .then(() => store.save('bookmarks', [bookmark]));
+  console.log('addBookmark');
+
+  return (dispatch) => {
+    store.push('bookmarks', bookmark)
+    .then(res => {
+        console.log('fetchBookmarks success');
+        console.log(res);
+        dispatch({ type: BOOKMARK_CREATE_SUCCESS, data: res });
+    }).catch((res) => {
+        console.log('fetchBookmarks failed');
+        console.log(res);
+        dispatch({ type: BOOKMARK_CREATE_FAILED, data: res });
+    });
+  };
 };

@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 //import { MapView } from 'react-native-maps';
 import { connect } from 'react-redux';
 import { Card, Button } from './common';
+import { addBookmark } from '../actions';
 
 class AirportDetail extends Component {
 
@@ -25,8 +26,9 @@ class AirportDetail extends Component {
   }
 
   onButtonPress() {
-    const { searchValue } = this.props;
-    this.props.search({ searchValue });
+    console.log(this.props);
+    const { airport } = this.props;
+    this.props.addBookmark(airport);
   }
 
   renderButton() {
@@ -81,4 +83,4 @@ const styles = {
   }
 };
 
-export default connect(null)(AirportDetail);
+export default connect(null, { addBookmark })(AirportDetail);
