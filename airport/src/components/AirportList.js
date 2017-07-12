@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { View, ScrollView, ListView } from 'react-native';
 import { connect } from 'react-redux';
@@ -61,7 +62,15 @@ const mapStateToProps = state => {
   console.log('AiportList - mapStateToProps');
   console.log(state);
   console.log(state.airportList);
-  return { airports: state.airportList };
+
+  const airports = _.map(state.airportList, (airport) => {
+    const bookmarked = _.some(state.bookmarkList, (bookmark) => {
+      return bookmark.id === airport.id;
+    });
+    return { ...airport, bookmarked };
+  });
+
+  return { airports };
 };
 
 export default connect(mapStateToProps)(AirportList);

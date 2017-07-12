@@ -7,7 +7,8 @@ class AirportListItem extends Component {
 
   selectAirport(id) {
     console.log(`selected airport with id ${id}`);
-    Actions.airportDetail({ airport: this.props.airport });
+    const { airport } = this.props;
+    Actions.airportDetail({ title: airport.iata, airport });
   }
 
   render() {
