@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import { search, searchChanged } from '../actions';
 import { CardSection, Input, Button, Spinner } from './common';
 
@@ -11,7 +12,12 @@ class SearchForm extends Component {
   }
 
   onButtonPress() {
-    const { searchValue } = this.props;
+
+    const { forwardKey, searchValue } = this.props;
+
+    if (forwardKey) {
+      Actions[forwardKey]();
+    }
     this.props.search({ searchValue });
   }
 

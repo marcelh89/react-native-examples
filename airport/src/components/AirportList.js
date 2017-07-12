@@ -10,7 +10,7 @@ class AirportList extends Component {
 
   componentWillMount() {
     console.log('componentWillMount');
-    this.initDataSource();
+    this.dataSource = ds.cloneWithRows(this.props.airports);
   }
 
   componentDidMount() {
@@ -28,16 +28,6 @@ class AirportList extends Component {
     }
 }
 
-  initDataSource() {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-
-    console.log(this.props.airports);
-    this.dataSource = ds.cloneWithRows(this.props.airports);
-  }
-
-
   renderRow(airport) {
     return <AirportListItem airport={airport} />;
   }
@@ -52,6 +42,7 @@ class AirportList extends Component {
 
         <ScrollView>
             <ListView
+              enableEmptySections
               dataSource={this.dataSource}
               renderRow={this.renderRow}
             />

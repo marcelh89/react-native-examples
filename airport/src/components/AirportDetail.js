@@ -6,6 +6,11 @@ import { Card, Button } from './common';
 
 class AirportDetail extends Component {
 
+  componentWillMount() {
+    console.log('componentWillMount');
+    console.log(this.props);
+  }
+
   renderMapView(longitude, latitude) {
     return (''
           /*<MapView
@@ -19,6 +24,23 @@ class AirportDetail extends Component {
     );
   }
 
+  onButtonPress() {
+    const { searchValue } = this.props;
+    this.props.search({ searchValue });
+  }
+
+  renderButton() {
+    const { airport } = this.props;
+
+    if (!airport.bookmarked) {
+      return (
+          <Button
+            onPress={this.onButtonPress.bind(this)}
+            btnStyle={{ flex: 0.5 }}
+          >Bookmark</Button>
+      );
+    }
+  }
 
   render() {
     console.log(AirportDetail);
@@ -32,7 +54,8 @@ class AirportDetail extends Component {
       <View style={{ flex: 1 }}>
         <Card style={{ flexDirection: 'row' }}>
           <Text style={nameTextStyle}>{airport.name}</Text>
-          <Button btnStyle={{ flex: 0.5 }}>Bookmark</Button>
+          {this.renderButton()}
+
         </Card>
         <Card>
           <Text>IATA: {airport.iata}</Text>
@@ -53,7 +76,7 @@ class AirportDetail extends Component {
 const styles = {
   nameTextStyle: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 18,
     flex: 0.5
   }
 };

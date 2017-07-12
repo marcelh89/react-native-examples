@@ -1,6 +1,6 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
-import AirportBookmark from './components/AirportBookmark';
+import AirportBookmarkList from './components/AirportBookmarkList';
 import AirportList from './components/AirportList';
 import AirportDetail from './components/AirportDetail';
 
@@ -9,11 +9,11 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
         <Scene
           key="airportBookmark"
-          component={AirportBookmark}
+          component={AirportBookmarkList}
           title="AirportBookmarks"
-
+          initial
         />
-        <Scene key="airportList" component={AirportList} title="AirportList" initial />
+        <Scene key="airportList" component={AirportList} title="AirportList"  />
 
         <Scene key="airportDetail" component={AirportDetail} title="AirportDetails" />
     </Router>
