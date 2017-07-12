@@ -21,8 +21,9 @@ const styles = {
     fontWeight: '600',
   },
   buttonStyle: {
-    flex: 1,
-    alignSelf: 'stretch',
+    flex: 0.25,
+    alignSelf: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
     borderRadius: 5,
     borderWidth: 1,

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { CardSection } from './common'
-
+import { CardSection } from './common';
 
 class AirportListItem extends Component {
 
@@ -37,9 +35,4 @@ const styles = {
   }
 };
 
-const mapStateToProps = state => {
-  //object {airports: [] } -> Array[]
-  return state.airports;
-};
-
-export default connect(mapStateToProps)(AirportListItem);
+export default AirportListItem;

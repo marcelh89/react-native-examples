@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 import AirportListReducer from './AirportListReducer';
+import SearchFormReducer from './SearchFormReducer';
 
 export default combineReducers({
-  airports: AirportListReducer
+  airportList: AirportListReducer,
+  searchForm: SearchFormReducer
 });

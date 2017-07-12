@@ -52,7 +52,7 @@ class AirportDetail extends Component {
 
 const styles = {
   nameTextStyle: {
-    fontWidth: 'bold',
+    fontWeight: 'bold',
     fontSize: 20,
     flex: 0.5
   }
