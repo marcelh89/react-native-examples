@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { Header } from './common';
 import SearchForm from './SearchForm';
 import AirportListItem from './AirportListItem';
-import { fetchBookmarks } from '../actions';
+import { fetchBookmarks, dropBookmark, addBookmark } from '../actions';
 
 class AirportBookmark extends Component {
 
-  componentWillMount() {
+  componentWillUpdate() {
     console.log('componentWillMount');
     this.props.fetchBookmarks();
     this.dataSource = ds.cloneWithRows(this.props.bookmarks);
@@ -29,7 +29,7 @@ class AirportBookmark extends Component {
   renderRow(airport) {
     console.log('renderRow');
     console.log(airport)
-    return <AirportListItem airport={_.merge(airport, { bookmarked: true })} />;
+    return <AirportListItem deletable airport={_.merge(airport, { bookmarked: true })} />;
   }
 
   render() {
@@ -67,4 +67,4 @@ const mapStateToProps = state => {
   return { bookmarks: state.bookmarkList };
 };
 
-export default connect(mapStateToProps, { fetchBookmarks })(AirportBookmark);
+export default connect(mapStateToProps, { fetchBookmarks, dropBookmark, addBookmark })(AirportBookmark);
